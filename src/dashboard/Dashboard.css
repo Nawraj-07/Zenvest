@@ -1,0 +1,213 @@
+/* Existing dashboard styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #f4f7fa;
+  color: #333;
+}
+
+#dashboard {
+  max-width: 920px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding: 0 20px;
+}
+
+/* ... (all other dashboard styles from before) ... */
+
+.overview {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.metric {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+  padding: 20px;
+  flex: 1 1 220px;
+}
+.metric .label {
+  display: block;
+  font-size: 14px;
+  color: #666;
+}
+.metric .amt {
+  display: block;
+  margin-top: 6px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #111;
+}
+
+.treemap {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+.treemap h3 {
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.bar {
+  margin-bottom: 8px;
+  height: 40px;
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden; /* Prevent content from spilling out */
+}
+.bar .tag {
+  padding: 0 10px; /* Add horizontal padding */
+  font-size: 14px;
+  font-weight: 600; /* A slightly cleaner bold */
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,.3);
+  white-space: nowrap; /* Keep text on a single line */
+  overflow: hidden; /* Hide text that overflows */
+  text-overflow: ellipsis; /* Show ... for hidden text */
+}
+
+.sector-list, .stock-list {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+.sector-list h3, .stock-list h3 {
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 14px;
+}
+.row .name { color: #444; }
+.row .val  { font-weight: 600; color: #111; }
+
+@media (max-width: 720px) {
+  #dashboard {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Profile Icon Styles */
+.profile-icon {
+  position: absolute; /* The icon will now scroll with the page */
+  top: 100px;      /* Adjust this value to be below your navbar */
+  right: 30px;     /* Adjust for desired distance from the right edge */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* This makes the div circular */
+  background-color: #387ed1;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.logout-menu {
+  position: absolute;
+  top: 60px; /* Position below the icon */
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+}
+
+.logout-menu button {
+    background: none;
+    border: none;
+    padding: 8px 12px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+.logout-menu button:hover {
+    background-color: #f4f7fa;
+}
+
+/* Search Bar Styles */
+.search-container {
+    grid-column: 1 / -1; /* Span full width */
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.search-input {
+    width: 50%;
+    padding: 15px 20px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px 0 0 8px; /* Rounded on the left */
+    outline: none;
+}
+
+.search-button {
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #387ed1;
+    color: white;
+    border: none;
+    border-radius: 0 8px 8px 0; /* Rounded on the right */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #205ba6;
+}
+
+/* Search Results Styles */
+.search-results-container {
+    grid-column: 1 / -1; /* Span full width */
+    padding: 20px;
+    margin-top: -20px; /* Overlap with search bar padding */
+}
+
+.result-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.05);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.result-title {
+    margin: 0 0 8px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.result-meta {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.no-results {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}
